@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Domains\Link\Requests;
+namespace App\Domains\Recipe\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-
-class AddLink extends FormRequest
+class AddRecipe extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,8 +26,8 @@ class AddLink extends FormRequest
     {
         return [
             'title' => ['required', 'max:255'],
-            'url' => ['required', 'url', 'max:255'],
-            'description' => ['required', 'max:255'],
+            'ingredients' => ['required', 'max:255'],
+            'instructions' => ['max:255'],
         ];
     }
 }
